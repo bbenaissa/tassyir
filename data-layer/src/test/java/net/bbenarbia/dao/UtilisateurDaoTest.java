@@ -69,7 +69,7 @@ public class UtilisateurDaoTest extends
 		roles.add(EnumRole.UTILISATEUR);
 		ROLES = new HashSet<EnumRole>(roles);
 
-		 Utilisateur utilisateur = new Utilisateur();
+		 utilisateur = new Utilisateur();
 
 	        // set up user's info
 		 utilisateur.setGroupeId(GROUPE_ID);

@@ -17,20 +17,17 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
 import net.bbenarbia.domain.base.BenEntity;
 import net.bbenarbia.domain.base.IDeletableEntity;
-import net.bbenarbia.domain.enums.EnumListConstants;
 import net.bbenarbia.domain.enums.EnumRole;
 
 import org.apache.commons.lang.StringUtils;
 import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.CascadeType;
-import org.hibernate.annotations.Parameter;
 import org.hibernate.annotations.Type;
 import org.joda.time.LocalDateTime;
 
@@ -61,9 +58,6 @@ public class Utilisateur extends BenEntity implements IDeletableEntity {
 	private String autorisations;
 
 	@Id
-	// @SequenceGenerator(name = "UtilisateurId_seq", sequenceName =
-	// "UtilisateurId_seq")
-	// @GeneratedValue(generator = "UtilisateurId_seq")
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	public long getId() {
 		return id;
