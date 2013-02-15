@@ -1,0 +1,64 @@
+[INFO] Scanning for projects...
+[INFO] Reactor build order: 
+[INFO]   tassyir
+[INFO]   data-layer
+[INFO] Searching repository for plugin with prefix: 'dependency'.
+[INFO] ------------------------------------------------------------------------
+[INFO] Building tassyir
+[INFO]    task-segment: [dependency:tree]
+[INFO] ------------------------------------------------------------------------
+[INFO] [dependency:tree {execution: default-cli}]
+[INFO] net.bbenarbia:tassyir:pom:1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Building data-layer
+[INFO]    task-segment: [dependency:tree]
+[INFO] ------------------------------------------------------------------------
+[INFO] [dependency:tree {execution: default-cli}]
+[INFO] net.bbenarbia:data-layer:jar:1.0-SNAPSHOT
+[INFO] +- org.springframework:spring-core:jar:3.0.7.RELEASE:compile
+[INFO] |  \- org.springframework:spring-asm:jar:3.0.7.RELEASE:compile
+[INFO] +- org.springframework:spring-jdbc:jar:3.0.7.RELEASE:compile
+[INFO] |  \- org.springframework:spring-beans:jar:3.0.7.RELEASE:compile
+[INFO] +- org.springframework:spring-orm:jar:3.0.7.RELEASE:compile
+[INFO] +- org.springframework:spring-tx:jar:3.0.7.RELEASE:compile
+[INFO] |  +- aopalliance:aopalliance:jar:1.0:compile
+[INFO] |  \- org.springframework:spring-context:jar:3.0.7.RELEASE:compile
+[INFO] |     \- org.springframework:spring-expression:jar:3.0.7.RELEASE:compile
+[INFO] +- org.springframework:spring-aop:jar:3.0.7.RELEASE:compile
+[INFO] +- org.hibernate:hibernate-core:jar:3.6.10.Final:compile
+[INFO] |  +- antlr:antlr:jar:2.7.6:compile
+[INFO] |  +- commons-collections:commons-collections:jar:3.2.1:compile (version managed from 3.1)
+[INFO] |  +- dom4j:dom4j:jar:1.6.1:compile
+[INFO] |  +- org.hibernate:hibernate-commons-annotations:jar:3.2.0.Final:compile
+[INFO] |  +- org.hibernate.javax.persistence:hibernate-jpa-2.0-api:jar:1.0.1.Final:compile
+[INFO] |  \- javax.transaction:jta:jar:1.1:compile
+[INFO] +- javassist:javassist:jar:3.8.0.GA:compile
+[INFO] +- joda-time:joda-time:jar:1.6.2:compile
+[INFO] +- joda-time:joda-time-hibernate:jar:1.3:compile
+[INFO] +- commons-beanutils:commons-beanutils:jar:1.8.3:compile
+[INFO] +- org.slf4j:slf4j-api:jar:1.6.1:provided (scope not updated to compile)
+[INFO] +- org.slf4j:jcl-over-slf4j:jar:1.6.1:test
+[INFO] +- ch.qos.logback:logback-classic:jar:0.9.28:test
+[INFO] |  \- ch.qos.logback:logback-core:jar:0.9.28:test
+[INFO] +- commons-lang:commons-lang:jar:2.4:compile
+[INFO] +- junit:junit:jar:4.8.1:test
+[INFO] +- org.easymock:easymock:jar:3.0:test
+[INFO] |  +- cglib:cglib-nodep:jar:2.2:test
+[INFO] |  \- org.objenesis:objenesis:jar:1.2:test
+[INFO] +- org.easymock:easymockclassextension:jar:3.0:test
+[INFO] \- org.springframework:spring-test:jar:3.0.7.RELEASE:test
+[INFO] 
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] ------------------------------------------------------------------------
+[INFO] tassyir ............................................... SUCCESS [1.700s]
+[INFO] data-layer ............................................ SUCCESS [0.338s]
+[INFO] ------------------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESSFUL
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 2 seconds
+[INFO] Finished at: Thu Feb 14 18:36:21 CET 2013
+[INFO] Final Memory: 17M/213M
+[INFO] ------------------------------------------------------------------------
