@@ -4,7 +4,6 @@ import java.util.List;
 
 import net.bbenarbia.dao.IUtilisateurDao;
 import net.bbenarbia.domain.Utilisateur;
-import net.bbenarbia.dto.UtilisateurDTO;
 import net.bbenarbia.service.IUtilisateurService;
 
 import org.springframework.beans.factory.annotation.Autowired;

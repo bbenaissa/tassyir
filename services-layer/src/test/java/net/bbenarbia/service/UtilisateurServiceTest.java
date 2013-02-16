@@ -6,7 +6,7 @@ import java.util.List;
 
 import net.bbenarbia.dao.IUtilisateurDao;
 import net.bbenarbia.domain.Utilisateur;
-import net.bbenarbia.dto.UtilisateurDTO;
+import net.bbenarbia.domain.dto.UtilisateurDTO;
 import net.bbenarbia.service.impl.UtilisateurService;
 
 import org.easymock.EasyMock;

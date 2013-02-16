@@ -17,6 +17,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Transient;
@@ -52,7 +53,7 @@ public class Utilisateur extends BenEntity implements IDeletableEntity {
 	private Boolean estConnecte = false;
 	private Contact contact;
 	private Boolean estSuperUser = false;
-//	private CategorieProfilUtilisateur categorieProfilUtilisateur;
+	private CategorieProfilUtilisateur categorieProfilUtilisateur;
 	// private Set<Session> sessions = new HashSet<Session>();
 	private Set<EnumRole> roles = new HashSet<EnumRole>();
 	private String autorisations;
@@ -150,17 +151,17 @@ public class Utilisateur extends BenEntity implements IDeletableEntity {
 		this.contact = contact;
 	}
 
-//	@ManyToOne
-//	@Cascade(CascadeType.SAVE_UPDATE)
-//	@JoinColumn(name = "fk_categorieprofilutilisateur")
-//	public CategorieProfilUtilisateur getCategorieProfilUtilisateur() {
-//		return categorieProfilUtilisateur;
-//	}
-//
-//	public void setCategorieProfilUtilisateur(
-//			CategorieProfilUtilisateur categorieProfilUtilisateur) {
-//		this.categorieProfilUtilisateur = categorieProfilUtilisateur;
-//	}
+	@ManyToOne
+	@Cascade(CascadeType.SAVE_UPDATE)
+	@JoinColumn(name = "fk_categorieprofilutilisateur")
+	public CategorieProfilUtilisateur getCategorieProfilUtilisateur() {
+		return categorieProfilUtilisateur;
+	}
+
+	public void setCategorieProfilUtilisateur(
+			CategorieProfilUtilisateur categorieProfilUtilisateur) {
+		this.categorieProfilUtilisateur = categorieProfilUtilisateur;
+	}
 
 	// @ManyToMany(mappedBy = "utilisateurs")
 	// public Set<Session> getSessions() {

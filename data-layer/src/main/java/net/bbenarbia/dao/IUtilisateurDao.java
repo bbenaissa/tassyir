@@ -4,6 +4,7 @@ import java.util.List;
 
 import net.bbenarbia.dao.common.IGenericDao;
 import net.bbenarbia.domain.Utilisateur;
+import net.bbenarbia.domain.dto.UtilisateurDTO;
 
 
 /**
@@ -93,4 +94,11 @@ public interface IUtilisateurDao extends IGenericDao<Utilisateur>{
      * @return list of users
      */
     List<Utilisateur> getUtilisateursByGroupeId(Integer groupeId);
+    
+    /**
+     * gets the existent employees
+     * @param groupeId
+     * @return list of users
+     */
+    List<UtilisateurDTO> getExistentEmployeeList(int groupeId);
 }

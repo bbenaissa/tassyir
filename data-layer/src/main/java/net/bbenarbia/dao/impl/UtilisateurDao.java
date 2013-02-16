@@ -5,6 +5,7 @@ import java.util.List;
 import net.bbenarbia.dao.IUtilisateurDao;
 import net.bbenarbia.dao.common.GenericDao;
 import net.bbenarbia.domain.Utilisateur;
+import net.bbenarbia.domain.dto.UtilisateurDTO;
 import net.bbenarbia.domain.enums.EnumRole;
 
 import org.hibernate.Query;
@@ -184,5 +185,25 @@ public class UtilisateurDao extends  GenericDao<Utilisateur> implements IUtilisa
         Query query = getSession().createQuery(queryBuilder.toString());
         query.setParameter("groupeId", groupeId);
         return (List<Utilisateur>) query.list();
+    }
+
+    /**
+     * Returns existent users (that were not deleted)
+     * @param groupeId
+     * @return list of users
+     */
+    @SuppressWarnings("unchecked")
+    @Override
+    public List<UtilisateurDTO> getExistentEmployeeList(int groupeId) {
+        StringBuilder queryBuilder = new StringBuilder();
+        queryBuilder.append(" SELECT NEW ").append(UtilisateurDTO.class.getName()).append(
+                " (nomUtilisateur, codeUtilisateur) FROM Utilisateur ");
+        queryBuilder.append(" WHERE groupeId = :groupeId AND dateSuppression = null ");
+        queryBuilder.append(" ORDER BY nomUtilisateur ");
+
+        Query query = getSession().createQuery(queryBuilder.toString());
+        query.setParameter("groupeId", groupeId);
+
+        return (List<UtilisateurDTO>) query.list();
     }
 }

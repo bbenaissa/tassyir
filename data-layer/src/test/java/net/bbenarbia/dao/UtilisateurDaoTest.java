@@ -10,14 +10,17 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import net.bbenarbia.domain.CategorieProfilUtilisateur;
 import net.bbenarbia.domain.DroitsUtilisateur;
 import net.bbenarbia.domain.Fonction;
 import net.bbenarbia.domain.Utilisateur;
+import net.bbenarbia.domain.dto.UtilisateurDTO;
 import net.bbenarbia.domain.enums.EnumDroit;
 import net.bbenarbia.domain.enums.EnumFonction;
 import net.bbenarbia.domain.enums.EnumModule;
 import net.bbenarbia.domain.enums.EnumRole;
 
+import org.joda.time.LocalDateTime;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -261,70 +264,70 @@ public class UtilisateurDaoTest extends
 		assertEquals("HARRYPOTTER", user.get(0).getNomUtilisateur());
 	}
 
-	//
-	// @Test
-	// public void getUtilisateurParRefTest() {
-	//
-	// ReferenceIdSequence ref1 = new ReferenceIdSequence();
-	// referenceIdSequenceDao.save(ref1);
-	//
-	// Utilisateur user1 = new Utilisateur();
-	// user1.setGroupeId(1);
-	// user1.setRefId(ref1);
-	//
-	// ReferenceIdSequence ref2 = new ReferenceIdSequence();
-	// referenceIdSequenceDao.save(ref2);
-	//
-	// Utilisateur user2 = new Utilisateur();
-	// user2.setGroupeId(1);
-	// user2.setRefId(ref2);
-	//
-	// utilisateurDao.save(user1, user2);
-	//
-	// Utilisateur result1 = utilisateurDao.getUtilisateurParRef(ref1.getId());
-	// assertNotNull(result1);
-	// assertEquals(ref1.getId(), result1.getRefId().getId());
-	//
-	// Utilisateur result2 = utilisateurDao.getUtilisateurParRef(ref2.getId());
-	// assertNotNull(result2);
-	// assertEquals(ref2.getId(), result2.getRefId().getId());
-	//
-	// assertNull(utilisateurDao.getUtilisateurParRef(ref1.getId() +
-	// ref2.getId()));
-	// }
+	
+//	 @Test
+//	 public void getUtilisateurParRefTest() {
+//	
+//	 ReferenceIdSequence ref1 = new ReferenceIdSequence();
+//	 referenceIdSequenceDao.save(ref1);
+//	
+//	 Utilisateur user1 = new Utilisateur();
+//	 user1.setGroupeId(1);
+//	 user1.setRefId(ref1);
+//	
+//	 ReferenceIdSequence ref2 = new ReferenceIdSequence();
+//	 referenceIdSequenceDao.save(ref2);
+//	
+//	 Utilisateur user2 = new Utilisateur();
+//	 user2.setGroupeId(1);
+//	 user2.setRefId(ref2);
+//	
+//	 utilisateurDao.save(user1, user2);
+//	
+//	 Utilisateur result1 = utilisateurDao.getUtilisateurParRef(ref1.getId());
+//	 assertNotNull(result1);
+//	 assertEquals(ref1.getId(), result1.getRefId().getId());
+//	
+//	 Utilisateur result2 = utilisateurDao.getUtilisateurParRef(ref2.getId());
+//	 assertNotNull(result2);
+//	 assertEquals(ref2.getId(), result2.getRefId().getId());
+//	
+//	 assertNull(utilisateurDao.getUtilisateurParRef(ref1.getId() +
+//	 ref2.getId()));
+//	 }
 
-	// @Test
-	// public void getRefIdUtilisateurByNomUtilisateurTest() {
-	//
-	// ReferenceIdSequence ref1 = new ReferenceIdSequence();
-	// referenceIdSequenceDao.save(ref1);
-	//
-	// Utilisateur user1 = new Utilisateur();
-	// user1.setGroupeId(1);
-	// user1.setRefId(ref1);
-	// user1.setNomUtilisateur("1");
-	//
-	// ReferenceIdSequence ref2 = new ReferenceIdSequence();
-	// referenceIdSequenceDao.save(ref2);
-	//
-	// Utilisateur user2 = new Utilisateur();
-	// user2.setGroupeId(1);
-	// user2.setRefId(ref2);
-	//
-	// utilisateurDao.save(user1, user2);
-	//
-	// Long result1 = utilisateurDao.getRefIdUtilisateurByNomUtilisateur(1,
-	// "1");
-	// assertEquals(Long.valueOf(ref1.getId()), result1);
-	//
-	// Long result2 = utilisateurDao.getRefIdUtilisateurByNomUtilisateur(2,
-	// "1");
-	// assertNull(result2);
-	//
-	// Long result3 = utilisateurDao.getRefIdUtilisateurByNomUtilisateur(1,
-	// "2");
-	// assertNull(result3);
-	// }
+//	 @Test
+//	 public void getRefIdUtilisateurByNomUtilisateurTest() {
+//	
+//	 ReferenceIdSequence ref1 = new ReferenceIdSequence();
+//	 referenceIdSequenceDao.save(ref1);
+//	
+//	 Utilisateur user1 = new Utilisateur();
+//	 user1.setGroupeId(1);
+//	 user1.setRefId(ref1);
+//	 user1.setNomUtilisateur("1");
+//	
+//	 ReferenceIdSequence ref2 = new ReferenceIdSequence();
+//	 referenceIdSequenceDao.save(ref2);
+//	
+//	 Utilisateur user2 = new Utilisateur();
+//	 user2.setGroupeId(1);
+//	 user2.setRefId(ref2);
+//	
+//	 utilisateurDao.save(user1, user2);
+//	
+//	 Long result1 = utilisateurDao.getRefIdUtilisateurByNomUtilisateur(1,
+//	 "1");
+//	 assertEquals(Long.valueOf(ref1.getId()), result1);
+//	
+//	 Long result2 = utilisateurDao.getRefIdUtilisateurByNomUtilisateur(2,
+//	 "1");
+//	 assertNull(result2);
+//	
+//	 Long result3 = utilisateurDao.getRefIdUtilisateurByNomUtilisateur(1,
+//	 "2");
+//	 assertNull(result3);
+//	 }
 
 	@Test
 	public void getUtilisateurParCodeTest() {
@@ -359,40 +362,40 @@ public class UtilisateurDaoTest extends
 		assertNull(utilisateurDao.getUtilisateurParCode(null));
 	}
 
-	// @Test
-	// public void getExistentEmployeeListTest() {
-	//
-	// Utilisateur user1 = new Utilisateur();
-	// int groupeId = 1000;
-	// user1.setGroupeId(groupeId);
-	// user1.setNomUtilisateur("user1");
-	//
-	// Utilisateur user2 = new Utilisateur();
-	// user2.setGroupeId(2);
-	// user2.setNomUtilisateur("user2");
-	//
-	// Utilisateur user3 = new Utilisateur();
-	// user3.setGroupeId(groupeId);
-	// user3.setNomUtilisateur("abc");
-	//
-	// Utilisateur user4 = new Utilisateur();
-	// user4.setGroupeId(groupeId);
-	// user4.setNomUtilisateur("abc1");
-	// user4.setDateSuppression(IrisClock.now());
-	//
-	// utilisateurDao.save(user1, user2, user3, user4);
-	//
-	// List<UtilisateurDTO> result1 =
-	// utilisateurDao.getExistentEmployeeList(groupeId);
-	// assertNotNull(result1);
-	// assertEquals(2, result1.size());
-	// assertEquals("abc", result1.get(0).getNomUtilisateur());
-	// assertEquals("user1", result1.get(1).getNomUtilisateur());
-	//
-	// List<UtilisateurDTO> result2 = utilisateurDao.getExistentEmployeeList(5);
-	// assertNotNull(result2);
-	// assertEquals(0, result2.size());
-	// }
+	 @Test
+	 public void getExistentEmployeeListTest() {
+	
+	 Utilisateur user1 = new Utilisateur();
+	 int groupeId = 1000;
+	 user1.setGroupeId(groupeId);
+	 user1.setNomUtilisateur("user1");
+	
+	 Utilisateur user2 = new Utilisateur();
+	 user2.setGroupeId(2);
+	 user2.setNomUtilisateur("user2");
+	
+	 Utilisateur user3 = new Utilisateur();
+	 user3.setGroupeId(groupeId);
+	 user3.setNomUtilisateur("abc");
+	
+	 Utilisateur user4 = new Utilisateur();
+	 user4.setGroupeId(groupeId);
+	 user4.setNomUtilisateur("abc1");
+	 user4.setDateSuppression(new LocalDateTime());
+	
+	 utilisateurDao.save(user1, user2, user3, user4);
+	
+	 List<UtilisateurDTO> result1 =
+	 utilisateurDao.getExistentEmployeeList(groupeId);
+	 assertNotNull(result1);
+	 assertEquals(2, result1.size());
+	 assertEquals("abc", result1.get(0).getNomUtilisateur());
+	 assertEquals("user1", result1.get(1).getNomUtilisateur());
+	
+	 List<UtilisateurDTO> result2 = utilisateurDao.getExistentEmployeeList(5);
+	 assertNotNull(result2);
+	 assertEquals(0, result2.size());
+	 }
 
 	@Test
 	public void getUtilisateurParGroupeIdAndCodeTest() {
@@ -554,19 +557,19 @@ public class UtilisateurDaoTest extends
 	 *            - fonctions
 	 * @return an initialized CategorieProfilUtilisateur object
 	 */
-	// private CategorieProfilUtilisateur
-	// getCategorieProfilUtilisateur(Set<DroitsUtilisateur> droitsUtil,
-	// Set<Fonction> fonctions) {
-	// CategorieProfilUtilisateur catProfUtil;
-	// catProfUtil = new CategorieProfilUtilisateur();
-	// // set up the user's profile
-	// catProfUtil.setGroupeId(GROUPE_ID);
-	// catProfUtil.setLibelleCategorieProfilUtilisateur("GESTIONAIRE");
-	// catProfUtil.setDroitsUtilisateurs(droitsUtil);
-	// catProfUtil.setFonctions(fonctions);
-	//
-	// return catProfUtil;
-	// }
+	 private CategorieProfilUtilisateur
+	 getCategorieProfilUtilisateur(Set<DroitsUtilisateur> droitsUtil,
+	 Set<Fonction> fonctions) {
+	 CategorieProfilUtilisateur catProfUtil;
+	 catProfUtil = new CategorieProfilUtilisateur();
+	 // set up the user's profile
+	 catProfUtil.setGroupeId(GROUPE_ID);
+	 catProfUtil.setLibelleCategorieProfilUtilisateur("GESTIONAIRE");
+	 catProfUtil.setDroitsUtilisateurs(droitsUtil);
+	 catProfUtil.setFonctions(fonctions);
+	
+	 return catProfUtil;
+	 }
 
 	/**
 	 * Create an initialized set of Fonctions.
