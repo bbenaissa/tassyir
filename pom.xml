@@ -516,6 +516,18 @@
 				<version>1.6.8</version>
 			</dependency>
 
+			<dependency>
+				<groupId>net.bbenarbia</groupId>
+				<artifactId>common-utils</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+
+			<dependency>
+				<groupId>net.bbenarbia</groupId>
+				<artifactId>data-layer</artifactId>
+				<version>${project.version}</version>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
