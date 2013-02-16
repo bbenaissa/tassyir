@@ -516,6 +516,8 @@
 				<version>1.6.8</version>
 			</dependency>
 
+
+	<!-- Tassyir dependencies -->
 			<dependency>
 				<groupId>net.bbenarbia</groupId>
 				<artifactId>common-utils</artifactId>
@@ -528,6 +530,16 @@
 				<artifactId>data-layer</artifactId>
 				<version>${project.version}</version>
 			</dependency>
+			<dependency>
+				<groupId>net.bbenarbia</groupId>
+				<artifactId>tassyir-web</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>net.bbenarbia</groupId>
+				<artifactId>services-layer</artifactId>
+				<version>${project.version}</version>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
@@ -535,5 +547,6 @@
 		<module>data-layer</module>
 		<module>common-utils</module>
 		<module>services-layer</module>
+		<module>tassyir-web</module>
 	</modules>
 </project>

@@ -10,7 +10,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import net.bbenarbia.domain.CategorieProfilUtilisateur;
 import net.bbenarbia.domain.DroitsUtilisateur;
 import net.bbenarbia.domain.Fonction;
 import net.bbenarbia.domain.Utilisateur;
@@ -557,19 +556,19 @@ public class UtilisateurDaoTest extends
 	 *            - fonctions
 	 * @return an initialized CategorieProfilUtilisateur object
 	 */
-	 private CategorieProfilUtilisateur
-	 getCategorieProfilUtilisateur(Set<DroitsUtilisateur> droitsUtil,
-	 Set<Fonction> fonctions) {
-	 CategorieProfilUtilisateur catProfUtil;
-	 catProfUtil = new CategorieProfilUtilisateur();
-	 // set up the user's profile
-	 catProfUtil.setGroupeId(GROUPE_ID);
-	 catProfUtil.setLibelleCategorieProfilUtilisateur("GESTIONAIRE");
-	 catProfUtil.setDroitsUtilisateurs(droitsUtil);
-	 catProfUtil.setFonctions(fonctions);
-	
-	 return catProfUtil;
-	 }
+//	 private CategorieProfilUtilisateur
+//	 getCategorieProfilUtilisateur(Set<DroitsUtilisateur> droitsUtil,
+//	 Set<Fonction> fonctions) {
+//	 CategorieProfilUtilisateur catProfUtil;
+//	 catProfUtil = new CategorieProfilUtilisateur();
+//	 // set up the user's profile
+//	 catProfUtil.setGroupeId(GROUPE_ID);
+//	 catProfUtil.setLibelleCategorieProfilUtilisateur("GESTIONAIRE");
+//	 catProfUtil.setDroitsUtilisateurs(droitsUtil);
+//	 catProfUtil.setFonctions(fonctions);
+//	
+//	 return catProfUtil;
+//	 }
 
 	/**
 	 * Create an initialized set of Fonctions.
