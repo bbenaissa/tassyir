@@ -12,7 +12,7 @@
 	<url>http://maven.apache.org</url>
 
 	<properties>
-		<spring.version>3.0.7.RELEASE</spring.version>
+		<spring.version>3.0.5.RELEASE</spring.version>
 		<spring.webflow.js>2.3.1.RELEASE</spring.webflow.js>
 		<spring.batch.version>2.1.8.RELEASE</spring.batch.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -26,6 +26,23 @@
 		<version.jdom>1.1</version.jdom>
 
 	</properties>
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+
+	<!-- <build> <plugins> <plugin> <groupId>org.apache.maven.plugins</groupId> 
+		<artifactId>maven-compiler-plugin</artifactId> <configuration> <source>1.6</source> 
+		<target>1.6</target> <showDeprecation>true</showDeprecation> <showWarnings>true</showWarnings> 
+		<fork>true</fork> </configuration> </plugin> </plugins> </build> -->
 	<dependencyManagement>
 		<dependencies>
 
@@ -118,6 +135,8 @@
 				<artifactId>spring-context</artifactId>
 				<version>${spring.version}</version>
 			</dependency>
+
+
 			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-beans</artifactId>
@@ -159,6 +178,8 @@
 				<artifactId>spring-js</artifactId>
 				<version>${spring.webflow.js}</version>
 			</dependency>
+
+
 			<!-- Spring Security -->
 			<dependency>
 				<groupId>org.springframework.security</groupId>
@@ -286,6 +307,13 @@
 			</dependency>
 
 			<!-- Logs -->
+			<dependency>
+				<groupId>commons-logging</groupId>
+				<artifactId>commons-logging</artifactId>
+				<version>1.1.1</version>
+			</dependency>
+
+
 			<dependency>
 				<groupId>org.slf4j</groupId>
 				<artifactId>slf4j-api</artifactId>
@@ -517,7 +545,7 @@
 			</dependency>
 
 
-	<!-- Tassyir dependencies -->
+			<!-- Tassyir dependencies -->
 			<dependency>
 				<groupId>net.bbenarbia</groupId>
 				<artifactId>common-utils</artifactId>
@@ -540,13 +568,27 @@
 				<artifactId>services-layer</artifactId>
 				<version>${project.version}</version>
 			</dependency>
+
+
+
+			<dependency>
+				<groupId>org.apache.log4j</groupId>
+				<artifactId>com.springsource.org.apache.log4j</artifactId>
+				<version>1.2.15</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>com.springsource.org.apache.commons.logging</artifactId>
+				<version>1.1.1</version>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
+
 	<modules>
 		<module>data-layer</module>
-		<module>common-utils</module>
 		<module>services-layer</module>
+		<module>tassyir-web</module>
 		<module>tassyir-web</module>
 	</modules>
 </project>

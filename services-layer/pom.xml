@@ -19,12 +19,6 @@
       
       	<dependency>
 			<groupId>net.bbenarbia</groupId>
-			<artifactId>common-utils</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-      	
-      	<dependency>
-			<groupId>net.bbenarbia</groupId>
 			<artifactId>data-layer</artifactId>
 			<version>${project.version}</version>
 		</dependency>
